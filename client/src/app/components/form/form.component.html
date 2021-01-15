@@ -1,0 +1,16 @@
+<form [formGroup]="starForm" (ngSubmit)="handelSubmit()" class="form">
+  <label for="name">Name:</label>
+  <input id="name" type="text" formControlName="name" />
+  <label for="age">Age:</label
+  ><input id="age" type="number" formControlName="age" />
+  <p>isAlive:</p>
+  <input type="checkbox" formControlName="isAlive" />
+  <select formControlName="galaxy">
+    <option value="">Pick Galaxy</option>
+    <option *ngFor="let galaxy of starService.galaxies" [value]="galaxy._id">
+      {{ galaxy.name }}
+    </option>
+  </select>
+  <p>{{ starForm.value | json }}</p>
+  <button type="submit">Add</button>
+</form>

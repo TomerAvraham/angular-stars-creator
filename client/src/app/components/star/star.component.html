@@ -1,0 +1,7 @@
+<div class="star_container">
+  <h5>Name: {{ star.name }}</h5>
+  <p>Age: {{ star.age }}</p>
+  <p *ngIf="star.isAlive">People Live Here!!!</p>
+  <p *ngIf="!star.isAlive">iM ALONE =(</p>
+  <p>Galaxy: {{ star?.galaxy?.name || "No galaxy" }}</p>
+</div>
